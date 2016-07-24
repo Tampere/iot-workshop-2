@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 50px;
+    background: rgb(149, 165, 166);
+}
+
+.card-wrap {
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    min-width: 100%;
+    padding: 10px;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    box-shadow: 2px 2px 2px #666666;
+}
+
+.card-title {
+    font-size: 120%;
+    font-weight: 700;
+    font-family: 'Helvetica', 'sans-serif';
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* a flex: 1 also works here, but is buggy on IE11 */
+}
+
+.card-content div {
+    margin-left: 40px;
+    font-size: 64px;
+    line-height: 90px;
+}
+
+.card-content div sup {
+    font-size: 42px;
+    opacity: 0.7;
+}
+
+.temperature {
+    background: #e74c3c;
+}
+
+.humidity {
+    background: rgb(26, 188, 156);
+}
+
+.pressure {
+    background: #9b59b6;
+}
+
+.luminance {
+    background: #34495e;
+}
+
+@media screen and (min-width: 960px) {
+    .card {
+        width: 48%;
+        margin: 0 auto 2%;
+        min-width: 0;
+    }
+}

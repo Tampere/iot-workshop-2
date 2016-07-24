@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IoT -dashboard</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div id="app" class="card-wrap">
+		<dash-panel heading="Temperature" :value="temperature" type="&deg;C"></dash-panel>
+		<dash-panel heading="Humidity" :value="humidity" type="% Rh"></dash-panel>
+		<dash-panel heading="Pressure" :value="pressure" type="hPa"></dash-panel>
+		<dash-panel heading="Luminance" :value="luminance" type="lux"></dash-panel>
+	</div>
+
+	<template id="dash-panel-template">
+		<div class="card {{heading | lowercase}}">
+			<div class="card-title">{{heading}}</div>
+			<div class="card-content">
+				<div>
+					{{value | round 2}}<sup>{{type}}</sup>
+				</div>
+			</div>
+		</div>
+	</template>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.9.3/vue-resource.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
